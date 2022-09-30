@@ -115,22 +115,87 @@ shuffle($cards);
 $playerCards = [];
 $computerCards = [];
 
-#distribute cards in alternating fashion--maybe array_shift?
-for ($i = 1; $i <= 10; $i+=2) {
-    $playerCards = array_shift($cards);
-    var_dump($playerCards);
-}
-$computerCards = $cards;
-var_dump($computerCards);
+#distribute cards in alternating fashion
+// for ($i = 1; $i <= 10; $i+=2) {
+//     $playerCards = array_shift($cards);
+//     var_dump($playerCards);
+// }
+// $computerCards = $cards;
+// var_dump($computerCards);
     
 
+# Teacher's Solution Variation 1
+# using a variable containing a string to act as a cursor to 
+# keep track of where we are while looping (can access variable in/outside of loop)
+// $dealTo = 'player';
+// foreach ($cards as $key => $card) {
+//     if ($dealTo == 'player') {
+//         $playerCards[] = array_pop($cards);
+//         $dealTo = 'computer';
+//     } else {
+//         $computerCards[] = array_pop($cards);
+//         $dealTo = 'player';
+//     }
+// }
+
+# VARIATION 2 - modulo operator
+# Ref: https://www.php.net/manual/en/language.operators.arithmetic.php
+// foreach ($cards as $key => $card) {
+//     if ($key % 0 == 0) {
+//         $playerCards[] = array_pop($cards);
+//     } else {
+//         $computerCards[] = array_pop($cards);
+//     }
+// }
+
+# VARIATION 3 - Popping the dealt card before the loop
+// foreach ($cards as $key => $card) {
+//     $cardToDeal = array_pop($cards);
+
+//     if ($key % 2 == 0) {
+//         $playerCards[] = $cardToDeal;
+//     } else {
+//         $computerCards[] = $cardToDeal;
+//     }
+// }
+
+# VARIATION 4 - Dynamic variables
+// foreach ($cards as $key => $card) {
+//     if ($key % 2 == 0) {
+//         $dealTo = 'playerCards';
+//     } else {
+//         $dealTo = 'computerCards';
+//     }
+
+//     # Dynamic variables : https://www.php.net/manual/en/language.variables.variable.php
+//     $$dealTo[] = array_pop($cards);
+// }
+
+
+# VARIATION 5 - Using a while loop
+// $dealTo = 'player';
+// while (count($cards) > 0) {
+//     if ($dealTo == 'player') {
+//         $playerCards[] = array_pop($cards);
+//         $dealTo = 'computer';
+//     } else {
+//         $computerCards[] = array_pop($cards);
+//         $dealTo = 'player';
+//     }
+// }
 
 
 
+# Output results
+// var_dump($playerCards); # Should yield 5 random cards
+// var_dump($computerCards); # Should yield 5 different random cards
 
+######################
+
+# KG tries at solutions
 
 // foreach ($cards as $index => $card) {
-//     if($index % 2 == 0) {
+//     if ($index % 2 == 0) {
 //         $playerCards[] = $card;
 //     } else {
 //        $computerCards[] = $card;
