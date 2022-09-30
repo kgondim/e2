@@ -10,6 +10,17 @@
 </head>
 
 <body>
+    <h1>Project 1</h1>
+
+    <h2>Mechanics</h2>
+    <ul>
+        <li>
+            <!-- Add steps/instructions to game laid out in plain language, like in readme -->
+
+        </li>
+    </ul>
+    <h2>Results</h2>
+    <!-- use unordered list? -->
     <p>
         You rolled a <?php echo $roll1; ?> and a <?php echo $roll2; ?>.
     </p>
