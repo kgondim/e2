@@ -14,6 +14,15 @@ _In plain english - no code - think through how you'll make this game work. Exam
 + _Otherwise, assign a value winner to Player B_
 + _Report the results of Player A's Move, Player B's move, the flip, and the winner to the page_
 
+# Create array for each di
+# choose a random element from each di and put in variable
+# Total each di and allocate to Player 1
+ # Repeat for Player 2
+# compare Player 1 total to Player 2 total. 
+# If Player1 score is greater, Player 1 is winner. 
+# If Player2 score is greater, Player 2 is winner.
+# If tied, No one wins. 
+# Message reporting results in view
 
 
 
