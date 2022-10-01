@@ -20,20 +20,32 @@
         </li>
     </ul>
     <h2>Results</h2>
-    <!-- use unordered list? -->
-    <p>
-        You rolled a <?php echo $roll1; ?> and a <?php echo $roll2; ?>.
-    </p>
-    <p> Player 1 has a total of <?php echo $player1Total; ?> points.
-    </p>
-    <p>
-        You rolled a <?php echo $roll3; ?> and a <?php echo $roll4; ?>.
-    </p>
-    <p> Player 2 has a total of <?php echo $player2Total; ?> points.
-    </p>
-    <p>
-        The winner is <?php echo $message1; ?> !
-    </p>
+    <?php foreach($results as $result) { ?>
+    <ul>
+        <li>Player 1 rolled a <?php echo $result['diceRoll1']; ?> and a <?php echo $result['diceRoll2']; ?>, which
+            equals
+            <?php echo $result['player1']; ?>.
+        </li>
+        <li>Player 1 has a total of <?php echo $result['player1'] ?> points.
+        </li>
+        <li>Player 1 rolled a <?php echo $result['diceRoll3']; ?> and a <?php echo $result['diceRoll4']; ?>, which
+            equals
+            <?php echo $result['player2']; ?>.
+        </li>
+        <li>Player 1 has a total of <?php echo $result['player2'] ?> points.
+        </li>
+        <li>The winner of Round is <?php echo $message1; ?> !
+        </li>
+    </ul>
+
+    <ul>
+        <li>Player 1 cumulative total <?php echo $result['player1'] ?>
+        </li>
+        <li>Player 2 cumulative total <?php echo $result['player2'] ?>
+        </li>
+    </ul>
+    <?php } ?>
+
 </body>
 
 </html>
