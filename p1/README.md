@@ -1,29 +1,30 @@
-_Any instructions/notes in italics should be removed from the template before submitting_
-
 # Project 1
 + By: Kristen Gondim
 + URL: <http://e2p1.vestige-kg.me>
 
-## Game planning
-_In plain english - no code - think through how you'll make this game work. Example:_
-+ _Create an array of two options, heads and tails._
-+ _Randomly choose one of these options from the array and assign it as Player A's move_
-+ _Assign Player B's move to whatever option was not chosen._
-+ _Randomly choose from the array of heads/tails again and assign this as the "flip" value_
-+ _If Player A's move matches "flip", then assign a value winner to Player A_
-+ _Otherwise, assign a value winner to Player B_
-+ _Report the results of Player A's Move, Player B's move, the flip, and the winner to the page_
+# Game planning
+#### Game logic:
+Create an array for each die containing numbers 1-6.
+For loop repeats the following steps to make a round that is played five times:
++ Choose a random element from each die and assign each to its own variable.
++ Calculate the total dice roll and allocate to Player 1.
++ Repeat first two steps for Player 2.
 
-# Create array for each di
-# choose a random element from each di and put in variable
-# Total each di and allocate to Player 1
- # Repeat for Player 2
-# compare Player 1 total to Player 2 total. 
-# If Player1 score is greater, Player 1 is winner. 
-# If Player2 score is greater, Player 2 is winner.
-# If tied, No one wins. 
-# Message reporting results in view
+Determine winner:
++ Compare Player 1 roll total to Player 2 roll total. 
++ If Player1 score is greater, Player 1 is winner. 
++ If Player2 score is greater, Player 2 is winner.
++ Otherwise, if tied, neither player wins the round. 
++ Report results in the view. 
 
+Create a multidimensional array ($results) with a key/value pair for each variable created for the game to iterate over and report results in the view.
+#### In the view:
+Foreach loop iterates over elements in results array to display specified values plugged into the surrounding text to report results for each of the five rounds.
+
+For each of five rounds, following results reported: 
++ Player 1's roll for each die and player total for round.
++ Player 2's roll for each die and player total for round.
++ The winner of the round.
 
 
 ## Outside resources

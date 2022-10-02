@@ -34,7 +34,7 @@
         </li>
         <li>Player 1 has a total of <?php echo $result['player2'] ?> points.
         </li>
-        <li>The winner of Round is <?php echo $message1; ?> !
+        <li>The winner of the round is <?php echo $message1; ?>!
         </li>
     </ul>
 

@@ -6,10 +6,10 @@ $dice2 = [1, 2, 3, 4, 5, 6];
 
 for ($i = 0; $i < 5; $i++) {
     var_dump($i);
-    # choose a random element from each di and put in variable
+    # choose a random element from each di and assign to variable
     $diceRoll1 = $dice1[rand(0, 5)];
     $diceRoll2 = $dice2[rand(0, 5)];
-    # Total each di and allocate to Player 1
+    # Total numbers from "roll" and allocate to Player 1
     $player1Total = $diceRoll1 + $diceRoll2;
     # Repeat for Player 2
     $diceRoll3 = $dice1[rand(0, 5)];
@@ -24,7 +24,7 @@ for ($i = 0; $i < 5; $i++) {
     } elseif ($player2Total > $player1Total) {
         $message1 = 'Player 2';
     } else {
-        $message1 = 'No one. Players are tied';
+        $message1 = 'neither player. Players are tied';
     }
     
     $results[] = [
