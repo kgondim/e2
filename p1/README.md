@@ -12,10 +12,9 @@ For loop repeats the following steps to make a round that is played five times:
 
 Determine winner:
 + Compare Player 1 roll total to Player 2 roll total. 
-+ If Player1 score is greater, Player 1 is winner. 
-+ If Player2 score is greater, Player 2 is winner.
++ If Player 1 score is greater, Player 1 is winner. 
++ If Player 2 score is greater, Player 2 is winner.
 + Otherwise, if tied, neither player wins the round. 
-+ Report results in the view. 
 
 Create a multidimensional array ($results) with a key/value pair for each variable created for the game to iterate over and report results in the view.
 #### In the view:
