@@ -40,4 +40,4 @@ for ($i = 0; $i < 5; $i++) {
 
 
 
-require 'index-view.php'; 
+require 'index-view.php';
