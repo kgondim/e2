@@ -1,15 +1,15 @@
 <?php
 
-# Create array for each di
+# array for each di
 $dice1 = [1, 2, 3, 4, 5, 6];
 $dice2 = [1, 2, 3, 4, 5, 6];
 
 for ($i = 0; $i < 5; $i++) {
     
-    # choose a random element from each di and assign to variable
+    # choose a random element from each di 
     $diceRoll1 = $dice1[rand(0, 5)];
     $diceRoll2 = $dice2[rand(0, 5)];
-    # Total numbers from "roll" and allocate to Player 1
+    # Total "roll" and allocate to Player 1
     $player1Total = $diceRoll1 + $diceRoll2;
     # Repeat for Player 2
     $diceRoll3 = $dice1[rand(0, 5)];
@@ -29,7 +29,7 @@ for ($i = 0; $i < 5; $i++) {
         $message1 = 'neither player. Players are tied';
     }
 
-    // $message1 = ($player1Total > $player2Total) ? 'Player 1' : ($player2Total > $player1Total) ? 'Player 2' : 'neither player. Players are tied';
+    // $message1 = ($player1Total > $player2Total) ? 'Player 1' : (($player2Total > $player1Total) ? 'Player 2' : 'neither player. Players are tied');
     
     
     $results[] = [
