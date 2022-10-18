@@ -9,7 +9,9 @@ class Catalog
 # methods
     public function __construct($dataSource)
     {
+        # Load the JSON string of data
         $json = file_get_contents($dataSource);
+        # Convert the JSON string into an array
         $this->products = json_decode($json, true);
        
     }
