@@ -16,21 +16,9 @@ for ($i = 0; $i < 5; $i++) {
     $diceRoll4 = $dice2[rand(0, 5)];
     $player2Total = $diceRoll3 + $diceRoll4;
 
-    // $player1Total = $dice1[rand(0, 5)] + $dice2[rand(0, 5)];
-    // $player2Total = $dice1[rand(0, 5)] + $dice2[rand(0, 5)];
-
     # Determine winner
     # Reporting results in view
-    if ($player1Total > $player2Total) {
-        $message1 = 'Player 1';
-    } elseif ($player2Total > $player1Total) {
-        $message1 = 'Player 2';
-    } else {
-        $message1 = 'neither player. Players are tied';
-    }
-
-    // $message1 = ($player1Total > $player2Total) ? 'Player 1' : (($player2Total > $player1Total) ? 'Player 2' : 'neither player. Players are tied');
-    
+    $message1 = ($player1Total > $player2Total) ? 'Player 1' : (($player2Total > $player1Total) ? 'Player 2' : 'neither player. Players are tied');
     
     $results[] = [
         'diceRoll1' => $diceRoll1,
@@ -43,7 +31,5 @@ for ($i = 0; $i < 5; $i++) {
     ];
     
 }
-
-
 
 require 'index-view.php';
