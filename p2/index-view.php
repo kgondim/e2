@@ -11,14 +11,29 @@
 
 <body>
 
-    <h1>Project 2 - Dice</h1>
+    <h1>Project 2 - Guess the Dice Roll</h1>
 
     <form method='POST' action='process.php'>
 
-        <input type='radio' id='heads' name='' value=''><label for='heads'></label>
-        <input type='radio' id='tails' name='' value=''><label for='tails'></label>
 
-        <button type='submit'>Play</button>
+        <input type='number' id='guess' name='guess' min='2' max='12' required maxlength='2' size='5'
+            value='<? echo $guess; ?>'><label for='guess'> Guess (number 2-12):</label>
+
+        <button type='submit'>Guess</button>
+    </form>
+
+    <!-- https://stackoverflow.com/questions/61623943/how-to-keep-the-values-in-the-input-fields-when-submitting-a-form-in-php -->
+
+    <?php if(isset($results)) { ?>
+    <h2>Results</h2>
+    You guessed <?php echo $guess ?>. The dice roll is <?php echo $playerTotal ?>.
+    <?php if ($winner) { ?>
+    You won!
+    <?php } else { ?>
+    You lost, please try again!
+    <?php } ?>
+
+    <?php } ?>
 
 
 </body>
