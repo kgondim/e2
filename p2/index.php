@@ -10,10 +10,16 @@ if(isset($_SESSION['results'])) {
     $playerTotal = $results['player'];
     $winner = $results['winner'];
     $guess = $results['guess'];
-
+   
+   
     $_SESSION['results'] = null;
-    // $winner = $_SESSION['results']['winner'];
-    // $winner = $_SESSION['results']['flip'];
-    // $winner = $_SESSION['results']['choice'];
+   
 }
+
+if (isset($_SESSION['my_wins'])) {
+    $my_wins = $_SESSION['my_wins'];
+    $num = $my_wins['points'];
+}
+
+
 require 'index-view.php';

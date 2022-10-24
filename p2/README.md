@@ -1,7 +1,7 @@
-*Any instructions/notes in italics should be removed from the template before submitting* 
+
 
 # Project 2
-+ By: Kristen
++ By: Kristen Gondim
 + URL: <http://e2p2.vestige-kg.me>
 
 ## Outside resources

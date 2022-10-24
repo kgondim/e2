@@ -29,7 +29,7 @@
             equals
             <?php echo $result['player1']; ?>.
         </li>
-        <li>Player 1 has a total of <?php echo $result['player1'] ?> points.
+        <li>Player 1 has a total of <?php echo $result['player1']; ?> points.
         </li>
         <li>Player 2 rolled a <?php echo $result['diceRoll3']; ?> and a <?php echo $result['diceRoll4']; ?>, which
             equals

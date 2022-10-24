@@ -26,9 +26,10 @@
 
     <?php if(isset($results)) { ?>
     <h2>Results</h2>
-    You guessed <?php echo $guess ?>. The dice roll is <?php echo $playerTotal ?>.
+    You guessed <?php echo $results['guess']; ?>. The dice roll is <?php echo $results['player']; ?>.
     <?php if ($winner) { ?>
     You won!
+    Number of points: <?php echo $my_wins['points']; ?>
     <?php } else { ?>
     You lost, please try again!
     <?php } ?>
