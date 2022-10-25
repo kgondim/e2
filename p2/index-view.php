@@ -12,30 +12,36 @@
 <body>
 
     <h1>Project 2 - Guess the Dice Roll</h1>
+    <h2>Mechanics</h2>
+    <ul>
+        <li>Player guesses the sum from the dice role</li>
+        <li>Computer generates a dice roll</li>
+        <li>If the player guesses the correct sum, player wins.</li>
+    </ul>
 
     <form method='POST' action='process.php'>
 
 
-        <input type='number' id='guess' name='guess' min='2' max='12' required maxlength='2' size='5'
-            value='<? echo $guess; ?>'><label for='guess'> Guess (number 2-12):</label>
+        <input type='number' id='guess' name='guess' min='2' max='12' required maxlength='2' size='10' value=''><label
+            for='guess'> Guess (number 2-12):</label>
 
         <button type='submit'>Guess</button>
     </form>
 
-    <!-- https://stackoverflow.com/questions/61623943/how-to-keep-the-values-in-the-input-fields-when-submitting-a-form-in-php -->
 
     <?php if(isset($results)) { ?>
     <h2>Results</h2>
     You guessed <?php echo $results['guess']; ?>. The dice roll is <?php echo $results['player']; ?>.
     <?php if ($winner) { ?>
     You won!
-    Number of points: <?php echo $my_wins['points']; ?>
+    You have won <?php echo $my_wins['points']; ?> times.
     <?php } else { ?>
     You lost, please try again!
     <?php } ?>
 
     <?php } ?>
 
+    <h2> You have played <?php echo $_SESSION['clickGuess']; ?> times.
 
 </body>
 
