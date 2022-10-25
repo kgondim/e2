@@ -14,9 +14,9 @@
     <h1>Project 2 - Guess the Dice Roll</h1>
     <h2>Mechanics</h2>
     <ul>
-        <li>Player guesses the sum from the dice role</li>
-        <li>Computer generates a dice roll</li>
-        <li>If the player guesses the correct sum, player wins.</li>
+        <li>Guess the sum from the dice role</li>
+        <li>Press the button for the computer to roll the dice and compare your guess</li>
+        <li>If you guess the correct sum, you win!</li>
     </ul>
 
     <form method='POST' action='process.php'>
@@ -34,14 +34,12 @@
     You guessed <?php echo $results['guess']; ?>. The dice roll is <?php echo $results['player']; ?>.
     <?php if ($winner) { ?>
     You won!
-    You have won <?php echo $my_wins['points']; ?> times.
     <?php } else { ?>
     You lost, please try again!
     <?php } ?>
 
     <?php } ?>
 
-    <h2> You have played <?php echo $_SESSION['clickGuess']; ?> times.
 
 </body>
 
