@@ -1,11 +1,19 @@
 <?php
 
-require __DIR__.'/vendor/autoload.php';
+session_start();
 
-use RPS\Game;
-use App\Debug;
+// require __DIR__.'/vendor/autoload.php';
 
-$game = new Game();
 
-# Each invocation of the `play` method will play and track a new round of player (given move) vs. computer
-Debug::dump($game->play('rock'));
+// Debug::dump($_SESSION);
+# Define array of moves - used in the view to display each move
+$moves = ['rock', 'paper', 'scissors'];
+
+# Extract results from the session if they eist
+$lastGame = $_SESSION['results']['lastGame'] ?? null;
+$recentGames = $_SESSION['results']['recentGames'] ?? null;
+
+# Clear the results of the lastGame
+$_SESSION['results']['lastGame'] = null;
+
+require 'index-view.php';
