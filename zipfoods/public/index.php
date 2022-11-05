@@ -13,3 +13,4 @@ $app = new E2\App();
 
 # Invoke router
 echo $app->route();
+ 
