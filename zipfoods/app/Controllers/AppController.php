@@ -8,11 +8,8 @@ class AppController extends Controller
      */
     public function index()
     {
-        $welcomes = ['Welcome', 'Aloha', 'Welkom', 'Bienvenidos', 'Bienvenu', 'Welkomma'];
         
-        return $this->app->view('index', [
-            'welcome' => $welcomes[array_rand($welcomes)]
-        ]);
+        return $this->app->view('index');
     }
 
     public function contact() 
@@ -28,5 +25,10 @@ class AppController extends Controller
             'aboutus' => 'ZipFoods is your one-stop-shop for convenient online grocery shopping in the greater Boston area.'
         ]);
     }
+    # solution
+    // public function about()
+    // {
+    //     return $this->app->view('about');
+    // }
     
 } 

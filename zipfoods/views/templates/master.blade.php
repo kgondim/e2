@@ -8,7 +8,9 @@
 
     <link rel='shortcut icon' href='/favicon.ico'>
 
-    <link href='/css/app.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link href='/css/zipfoods.css' rel='stylesheet'>
 
     @yield('head')
 
@@ -16,8 +18,7 @@
 <body>
 
 <header>
-    <img id='logo' src='/images/hes-logo.png' alt='Harvard Extension School Logo'>
-    <h1>{{ $app->config('app.name') }}</h1>
+    <a href='/'><img id='logo' src='/images/zipfoods-logo.png' alt='{{ $app->config('app.name') }} logo'></a>
 </header>
 
 <main>
