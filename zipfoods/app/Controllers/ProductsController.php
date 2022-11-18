@@ -33,24 +33,48 @@ class ProductsController extends Controller
     {
         
         $sku = $this->app->param('sku');
+
+        if (is_null($sku)) {
+            $this->app->redirect('/products');
+        }
         
         $productsObj = new Products($this->app->path('/database/products.json'));
 
         $product = $this->productsObj->getBySku($sku);
 
         if (is_null($product)) {
+            
             return $this->app->view('products/missing');
         }
         
-        return $this->app->view('products/show', ['product' => $product]);
+        $reviewSaved = $this->app->old('reviewSaved');
+
+        return $this->app->view('products/show', [
+            'product' => $product,
+            'reviewSaved' => $reviewSaved
+        ]);
     }       
 
-    public function missing()
+    public function saveReview()
     {
-        
-    return $this->app->view('products/missing');
+        $this->app->validate([
+            'sku' => 'required',
+            'name' => 'required', # Note how multiple validation rules are separated by a |
+            'review' => 'required|minLength:200' # Note that some rules accept paramaters, which follow a :
+        ]);
 
+        # If the above validation checks fail
+        # user redirected back to where came from
+        # None of code that follows will be executed
+        
+        $sku = $this->app->input('sku');
+        $name = $this->app->input('name');
+        $review = $this->app->input('review');
+
+        # Todo: persist review to database...
+
+        return $this->app->redirect('/product?sku=' . $sku, ['reviewSaved'=> true]);
     }
         
-   
+    
 }
