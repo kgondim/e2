@@ -55,46 +55,46 @@ public function practice()
     }
     # example 1
     # Write a SQL query
-    $sql = "SELECT * FROM products";
+    // $sql = "SELECT * FROM products";
 
     # Execute the statement, getting the result set as a PDOStatement object
     # https://www.php.net/manual/en/pdo.query.php
-    $statement = $pdo->query($sql);
+    // $statement = $pdo->query($sql);
 
     # https://www.php.net/manual/en/pdostatement.fetchall.php
-    dump($statement->fetchAll());
+    // dump($statement->fetchAll());
 
     # example 2
 
-    $sql = "INSERT INTO products (name, sku, description, price, available, weight, perishable) 
-    VALUES (
-        'Driscoll’s Strawberries', 
-        'driscolls-strawberries',
-        'Driscoll’s Strawberries are consistently the best, sweetest, juiciest strawberries available. This size is the best selling, as it is both convenient for completing a cherished family recipes and for preparing a quick snack straight from the fridge.',
-        4.99, 
-        0, 
-        1,
-        1)";
+    // $sql = "INSERT INTO products (name, sku, description, price, available, weight, perishable) 
+    // VALUES (
+    //     'Driscoll’s Strawberries', 
+    //     'driscolls-strawberries',
+    //     'Driscoll’s Strawberries are consistently the best, sweetest, juiciest strawberries available. This size is the best selling, as it is both convenient for completing a cherished family recipes and for preparing a quick snack straight from the fridge.',
+    //     4.99, 
+    //     0, 
+    //     1,
+    //     1)";
 
-    $pdo->query($sql);
+    // $pdo->query($sql);
 
-    # example 3
-    $sqlTemplate = "INSERT INTO products (name, sku, description, price, available, weight, perishable) 
-    VALUES (:name, :sku, :description, :price, :available, :weight, :perishable)";
+    // # example 3
+    // $sqlTemplate = "INSERT INTO products (name, sku, description, price, available, weight, perishable) 
+    // VALUES (:name, :sku, :description, :price, :available, :weight, :perishable)";
 
-    $values = [
-        'name' => 'Driscoll’s Strawberries',
-        'sku' => 'driscolls-strawberries',
-        'description' => 'Driscoll’s Strawberries are consistently the best, sweetest, juiciest strawberries available. This size is the best selling, as it is both convenient for completing a cherished family recipes and for preparing a quick snack straight from the fridge.',
-        'sku' => 'driscolls-strawberries',
-        'price' => 4.99,
-        'available' => 0,
-        'weight' => 1,
-        'perishable' => 1,
-    ];
+    // $values = [
+    //     'name' => 'Driscoll’s Strawberries',
+    //     'sku' => 'driscolls-strawberries',
+    //     'description' => 'Driscoll’s Strawberries are consistently the best, sweetest, juiciest strawberries available. This size is the best selling, as it is both convenient for completing a cherished family recipes and for preparing a quick snack straight from the fridge.',
+    //     'sku' => 'driscolls-strawberries',
+    //     'price' => 4.99,
+    //     'available' => 0,
+    //     'weight' => 1,
+    //     'perishable' => 1,
+    // ];
 
-    $statement = $pdo->prepare($sqlTemplate);
-    $statement->execute($values);
+    // $statement = $pdo->prepare($sqlTemplate);
+    // $statement->execute($values);
 }
     
 } 
