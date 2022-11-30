@@ -27,7 +27,7 @@
 
     <form method='POST' id='product-review' action='/products/save-review'>
         <h3>Review {{ $product['name'] }}</h3>
-        <input type='hidden' name='product_id' value='{{ $product['product_id'] }}'>
+        <input type='hidden' name='product_id' value='{{ $product['id'] }}'>
         <input type='hidden' name='sku' value='{{ $product['sku'] }}'>
 
         <div class='form-group'>
@@ -52,5 +52,20 @@
         </ul>
     @endif
 
+    <div id='reviews'>
+        <h3>What our customers think</h3>
+
+        @if (!$reviews)
+            There are no reviews for this product yet.
+        @endif
+
+        @foreach ($reviews as $review)
+            <div class='review'>
+                <div class='review-name'>{{ $review['name'] }}</div>
+                <div class='review-content'>{{ $review['review'] }}</div>
+            </div>
+        @endforeach
+    </div>
     <a href='/products'>&larr; Return to all products</a>
+
 @endsection
