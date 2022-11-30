@@ -1,7 +1,7 @@
 @extends('templates/master')
 
 @section('title')
-    <h2>New Product</h2>
+    New Product
 @endsection
 
 @section('content')
