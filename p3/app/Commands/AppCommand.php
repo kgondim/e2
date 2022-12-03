@@ -25,7 +25,7 @@ class AppCommand extends Command
 
         $this->app->db()->createTable('results', [
             'round' => 'int',
-            'win' => 'tinyint(1)',
+            'win' => 'tinyint',
         ]);
         
         dump('Migration complete; check the database for your new tables.');
@@ -38,6 +38,11 @@ class AppCommand extends Command
             $guess = [
                 'guess' => rand(2, 12),
             ];
+
+            # Insert result
+            $this->app->db()->insert('guesses', $guess);
+
+            dump('guesses table has been seeded');
         }
     }
 

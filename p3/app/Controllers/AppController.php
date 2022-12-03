@@ -44,8 +44,8 @@ class AppController extends Controller
             'guess' => 'required'
         ]);
 
-        $this->app->db()->input('guess');
-        // $this->app->db()->insert('nameoftable', [ 
+        // $this->app->db()->input('guess');
+        // $this->app->db()->insert('guesses', [ 
         //     'guess' => $guess
         // ]);
 
