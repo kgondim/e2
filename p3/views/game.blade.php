@@ -15,7 +15,7 @@
 
     @if ($guessSaved)
         <div class='alert alert-success'>Thank you, your guess was entered! The roll was {{ $playerTotal }}. You guessed
-            {{ $guessSaved }}</div>
+            {{ $guess }}</div>
     @endif
 
     @if ($app->errorsExist())
@@ -28,8 +28,7 @@
         <div class='form-group'>
             <label for='guess'>Guess (number 2-12)</label>
             <input type='number' class='form-control' name='guess' id='guess' min='2' max='12' required
-                maxlength='2' size='10' value=''>
-            {{-- maxlength='2' size='10' value='{{ $app->old('guess') }}'> --}}
+                maxlength='2' size='10' value='{{ $app->old('guess') }}'>
         </div>
 
 
