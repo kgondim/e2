@@ -15,8 +15,7 @@ class AppController extends Controller
     {
         # user input guess
         $guessSaved = $this->app->old('guessSaved');
-
-
+        dump($guessSaved);
         # Create array for each di
         $dice1 = [1, 2, 3, 4, 5, 6];
         $dice2 = [1, 2, 3, 4, 5, 6];
@@ -27,14 +26,15 @@ class AppController extends Controller
         # Sum from "roll" and allocate to Player
         $playerTotal = $diceRoll1 + $diceRoll2;
         # Determine winner
-
-        $winner = $guessSaved == $playerTotal;
-
+        $guess = $this->app->sessionGet('guess');
+        $winner = $guess == $playerTotal;
+        dump($guess);
         return $this->app->view('game', [
             'about' => 'Play the game',
             'guessSaved' => $guessSaved,
             'winner' => $winner,
             'playerTotal' => $playerTotal,
+            'guess' => $guess,
         ]);
     }
 
@@ -45,16 +45,13 @@ class AppController extends Controller
         ]);
 
         $guess = $this->app->input('guess');
-        $this->app->db()->insert('guesses', [ 
+        $this->app->db()->insert('guesses', [
             'guess' => $guess
         ]);
 
-
-
         $this->app->redirect('/game', [
-            'guessSaved' => true
-            
+            'guessSaved' => true,
+            'guess' => $this->app->input('guess')
         ]);
-       
     }
 }
