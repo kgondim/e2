@@ -14,7 +14,6 @@ class AppController extends Controller
     public function game()
     {
         # user input guess
-
         $guessSaved = $this->app->old('guessSaved');
 
 
@@ -35,6 +34,7 @@ class AppController extends Controller
             'about' => 'Play the game',
             'guessSaved' => $guessSaved,
             'winner' => $winner,
+            'playerTotal' => $playerTotal,
         ]);
     }
 
@@ -44,10 +44,12 @@ class AppController extends Controller
             'guess' => 'required'
         ]);
 
-        // $this->app->db()->input('guess');
-        // $this->app->db()->insert('guesses', [ 
-        //     'guess' => $guess
-        // ]);
+        $guess = $this->app->input('guess');
+        $this->app->db()->insert('guesses', [ 
+            'guess' => $guess
+        ]);
+
+
 
         $this->app->redirect('/game', [
             'guessSaved' => true
