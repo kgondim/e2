@@ -1,61 +1,40 @@
 <?php
 
 namespace App\Commands;
-
+use Faker\Factory;
 
 class AppCommand extends Command
 {
-    public function test()
-    {
-        dump('It works! You invoked your first command.');
-    }
-
+    
     public function fresh () {
         $this->migrate();
-        $this->seedGuesses();
         $this->seedResults();
   
     }
 
     public function migrate() {
-        $this->app->db()->createTable('guesses', [  
-            'guess' => 'int'
-        
-        ]);
-
+       
         $this->app->db()->createTable('results', [
-            'round' => 'int',
-            'win' => 'tinyint',
+            'win' => 'tinyint(1)',
+            'timestamp' => 'timestamp',
         ]);
         
         dump('Migration complete; check the database for your new tables.');
-        dump('You ran the migrate command');
     }
 
-    public function seedGuesses()
-    {
-        for ($i = 0; $i < 10; $i++) {
-            $guess = [
-                'guess' => rand(2, 12),
-            ];
-
-            # Insert result
-            $this->app->db()->insert('guesses', $guess);
-
-            dump('guesses table has been seeded');
-        }
-    }
 
     public function seedResults()
     {
+        $faker = Factory::create();
+        
         $number = 1;
         # Use a loop to create 10 results
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 10; $i > 0; $i--) {
             
             $result = [
-                'round' => $number++,
                 'win' => ($i % 2 == 0) ? 1 : 0, # Alternate between boolean 1 and 0,
-            ];
+                'timestamp' => $faker->dateTimeBetween('-'.$i.' days', '-'.$i.' days')->format('Y-m-d H:i:s')
+            ]; 
 
             # Insert result
             $this->app->db()->insert('results', $result);

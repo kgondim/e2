@@ -1,15 +1,17 @@
 @extends('templates/master')
 
-@section('title')
-    {{ $app->config('app.name') }}
-@endsection
 
 @section('content')
-    <h2>Welcome</h2>
+    <p>Welcom to the {{ $app->config('app.name') }} game landing!</p>
 
-    <p>{{ $app->config('app.name') }} is the project 3 game</p>
+    <h2>Instructions</h2>
+    <p>Input your guess for the dice roll and submit</p>
+    <p>Your guess is compared to the roll</p>
+    <p>If you win, you get 1 point!</p>
+
+
 
     <p>
-        <a href='game'>Check out the game ...</a>
+        <a href='game'>Click here if you're ready to play out the game!</a>
     </p>
 @endsection
