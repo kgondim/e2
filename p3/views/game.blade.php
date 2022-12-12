@@ -12,6 +12,10 @@
     <div class='container'>
         <div class='col-md-6'>
             <h2> Play</h2>
+            <h3>Instructions</h3>
+            <p>Input your guess for the dice roll and press the button to submit your guess</p>
+            <p>Your guess is then compared to the roll</p>
+            <p>If you win, you get 1 point!</p>
         </div>
     </div>
 
