@@ -9,20 +9,24 @@
 @endsection
 
 @section('content')
-    <h2>Round Results History</h2>
-
+    <div class='container'>
+        <div class='col-md-6'>
+            <h2>Round Results History</h2>
+        </div>
+    </div>
     @if ($allResults)
-        <div>
-            @foreach ($allResults as $result)
-                <p>Round timestamp: {{ $result['timestamp'] }} id#: {{ $result['id'] }},
-                    you earned {{ $result['win'] }} points!
-                </p>
-                <p><a href='/details?id={{ $result['id'] }}'>See details of round recorded on {{ $result['timestamp'] }}</a>
-                </p>
-            @endforeach
-
+        <div class='container'>
+            <div class='col-md-6'>
+                @foreach ($allResults as $result)
+                    <p>Round played at {{ $result['timestamp'] }}:
+                        you earned {{ $result['win'] }} points! <a class='link' href='/details?id={{ $result['id'] }}'>See
+                            details</a>
+                    </p>
+                @endforeach
+            </div>
         </div>
     @endif
-
-    <a href='/game'>Return to the game</a>
+    <div class='container'>
+        <p><a class='link' href='/game'>Return</a> to the game</p>
+    </div>
 @endsection

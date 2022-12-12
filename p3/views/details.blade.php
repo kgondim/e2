@@ -9,16 +9,20 @@
 @endsection
 
 @section('content')
-    <h2>Selected Round Details</h2>
-
+    <div class='container'>
+        <div class='col-md-6'>
+            <h2>Selected Round Details</h2>
+        </div>
+    </div>
     @if ($details)
-        <div>
-            <p>id: {{ $details['id'] }}</p>
-            <p>Round timestamp: {{ $details['timestamp'] }}</p>
-            <p>win: {{ $details['win'] ? 'won' : 'lost' }}</p>
-            </p>
-            <a href='/game'>Return to the game</a>
-            <a href='/history'>Return to the round history</a>
+        <div class='container'>
+            <div class='col-md-6'>
+                <p>Round played at {{ $details['timestamp'] }}</p>
+                <p>Result: You {{ $details['win'] ? 'won' : 'lost' }}!</p>
+                </p>
+                <p><a class='link' href='/game'>Return</a> to the game</p>
+                <p><a class='link' href='/history'>Return</a> to the round history</p>
+            </div>
         </div>
     @endif
 @endsection

@@ -20,7 +20,6 @@ class AppController extends Controller
         $guess = $this->app->old('guess');
         
         return $this->app->view('game', [
-            'about' => 'Play the game',
             'guessSaved' => $guessSaved,
             'winner' => $winner,
             'playerTotal' => $playerTotal,
@@ -33,6 +32,7 @@ class AppController extends Controller
         $this->app->validate([
             'guess' => 'required'
         ]);
+        
 
         # retrieve guess from user input in form
         $guess = $this->app->input('guess');
@@ -43,6 +43,7 @@ class AppController extends Controller
         # sum a random element from each of two dice rolls and assign to Player
         $playerTotal =  $dice[rand(0, 5)] + $dice[rand(0, 5)];
 
+        
         # determine if winner with boolean: 1 is winner, 0 is not winner
         $winner = $guess == $playerTotal ? 1 : 0;
 

@@ -2,16 +2,18 @@
 
 
 @section('content')
-    <p>Welcom to the {{ $app->config('app.name') }} game landing!</p>
+    <div class='container'>
+        <div class='col-md-10'>
+            <p>Welcome to the {{ $app->config('app.name') }} game landing!</p>
 
-    <h2>Instructions</h2>
-    <p>Input your guess for the dice roll and submit</p>
-    <p>Your guess is compared to the roll</p>
-    <p>If you win, you get 1 point!</p>
+            <h2>Instructions</h2>
+            <p>Input your guess for the dice roll and press the button to submit your guess</p>
+            <p>Your guess is then compared to the roll</p>
+            <p>If you win, you get 1 point!</p>
 
-
-
-    <p>
-        <a href='game'>Click here if you're ready to play out the game!</a>
-    </p>
+        </div>
+    </div>
+    <div class='container'>
+        <p><a class='link' href='game'>Click here</a> if you're ready to play the game!</p>
+    </div>
 @endsection
