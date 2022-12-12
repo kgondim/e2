@@ -13,8 +13,7 @@
 + [ ] I have integrated testing into my application
 + [X] I am taking this course for undergraduate credit and have opted out of integrating testing into my application
 
-## Outside resources
-*your list of outside resources go here*
+
 
 ## Notes for instructor
-*any notes for me to refer to while grading; if none, omit this section*
++ Note: There are four pages total in the application: index is the landing, game is the home page, history is the round history, and details is detailed round information.
